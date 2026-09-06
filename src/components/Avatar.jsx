@@ -1,4 +1,17 @@
-// ว่างไว้ตั้งใจ — เขียนเองใน Lab A แล้วขยายต่อใน Lab B (B2)
-// หน้าที่: วงกลมตัวอักษรย่อของชื่อ (ตัวแรกของชื่อ พิมพ์ใหญ่)
-// Lab B: รับ size="sm" | "md" | "lg" และ color="blue" | "purple" | "emerald"
-// 🔴 size กับ color ต้องเป็น object คนละก้อน ไม่ใช่ยำรวมเป็น key เดียว เช่น { smBlue: "..." }
+const sizeClasses = {
+	sm: 'avatar avatar-sm',
+	md: 'avatar avatar-md',
+	lg: 'avatar avatar-lg',
+}
+
+const colorClasses = {
+	blue: 'avatar-blue',
+	purple: 'avatar-purple',
+	emerald: 'avatar-emerald',
+}
+
+function Avatar({ name, size = 'md', color = 'blue' }) {
+	return <div className={`${sizeClasses[size]} ${colorClasses[color]}`}>{name.charAt(0)}</div>
+}
+
+export default Avatar

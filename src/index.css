@@ -1,1 +1,143 @@
 @import "tailwindcss";
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-width: 320px;
+	background: #f8fafc;
+	color: #0f172a;
+	font-family: "Noto Sans Thai", "Sukhumvit Set", "Helvetica Neue", Arial, sans-serif;
+}
+
+.page-shell {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 44px 40px 52px;
+}
+
+.page-header {
+	text-align: center;
+}
+
+.eyebrow {
+	margin: 0 0 10px;
+	color: #64748b;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: .08em;
+	text-transform: uppercase;
+}
+
+h1 {
+	margin: 0 0 6px;
+	font-size: 30px;
+	font-weight: 800;
+}
+
+.subtitle {
+	margin: 0 0 34px;
+	color: #64748b;
+	font-size: 15px;
+}
+
+.subtitle code {
+	font-family: inherit;
+}
+
+.team-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 20px;
+}
+
+.profile-card {
+	display: flex;
+	align-items: center;
+	min-width: 0;
+	gap: 14px;
+	padding: 18px;
+	background: #fff;
+	border: 1px solid #e2e8f0;
+	border-radius: 12px;
+	box-shadow: 0 1px 3px rgb(15 23 42 / 8%);
+}
+
+.profile-card-lead {
+	border: 2px solid #7c3aed;
+	box-shadow: 0 6px 16px rgb(124 58 237 / 16%);
+}
+
+.avatar {
+	display: flex;
+	flex: none;
+	align-items: center;
+	justify-content: center;
+	border-radius: 9999px;
+	color: #fff;
+	font-weight: 700;
+}
+
+.avatar-sm { width: 40px; height: 40px; font-size: 16px; }
+.avatar-md { width: 48px; height: 48px; font-size: 19px; }
+.avatar-lg { width: 64px; height: 64px; font-size: 25px; }
+.avatar-blue { background: #2563eb; }
+.avatar-purple { background: #7c3aed; }
+.avatar-emerald { background: #059669; }
+
+.profile-body {
+	min-width: 0;
+	flex: 1;
+}
+
+.profile-body h2 {
+	margin: 0;
+	overflow: hidden;
+	font-size: 16px;
+	font-weight: 700;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.profile-body p {
+	margin: 2px 0 8px;
+	overflow: hidden;
+	color: #64748b;
+	font-size: 13px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.badges {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+}
+
+.badge {
+	padding: 3px 10px;
+	border-radius: 9999px;
+	font-size: 11px;
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+.badge-online { background: #dcfce7; color: #15803d; }
+.badge-away { background: #fef9c3; color: #a16207; }
+.badge-offline { background: #f1f5f9; color: #475569; }
+.badge-lead { background: #ede9fe; color: #6d28d9; }
+
+.note {
+	margin: 30px 0 0;
+	color: #94a3b8;
+	font-size: 12px;
+	text-align: center;
+}
+
+@media (max-width: 760px) {
+	.page-shell { padding: 32px 20px 40px; }
+	.team-grid { grid-template-columns: 1fr; }
+	.subtitle { line-height: 1.6; }
+}

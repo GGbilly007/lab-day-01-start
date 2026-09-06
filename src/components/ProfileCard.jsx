@@ -1,4 +1,29 @@
-// ว่างไว้ตั้งใจ — เขียนเองใน Lab A
-// หน้าที่: การ์ดพนักงาน 1 ใบ = <Avatar /> + ชื่อ/ตำแหน่ง/แผนก + <Badge />
-// 🔴 ห้ามยาวเกิน 35 บรรทัด (Twist ข้อ 2) — ถ้าเกิน แปลว่ายังไม่ได้แตกงานไปให้ Avatar/Badge จริง
-// Lab B: ใบของ isLead ต้องส่ง size="lg" color="purple" ให้ Avatar และมี Badge variant="lead"
+import Avatar from './Avatar.jsx'
+import Badge from './Badge.jsx'
+
+const statusLabels = {
+	online: 'ออนไลน์',
+	away: 'ไม่อยู่ที่โต๊ะ',
+	offline: 'ออฟไลน์',
+}
+
+function ProfileCard({ user }) {
+	const avatarSize = user.isLead ? 'lg' : 'md'
+	const avatarColor = user.isLead ? 'purple' : 'blue'
+
+	return (
+		<article className={`profile-card${user.isLead ? ' profile-card-lead' : ''}`}>
+			<Avatar name={user.name} size={avatarSize} color={avatarColor} />
+			<div className="profile-body">
+				<h2>{user.name}</h2>
+				<p>{user.role} · {user.department}</p>
+				<div className="badges">
+					<Badge variant={user.status}>{statusLabels[user.status]}</Badge>
+					{user.isLead && <Badge variant="lead">หัวหน้าทีม</Badge>}
+				</div>
+			</div>
+		</article>
+	)
+}
+
+export default ProfileCard

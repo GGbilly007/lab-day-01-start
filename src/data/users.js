@@ -8,4 +8,5 @@ export const users = [
   { id: 4, name: "มานี มีนา",      role: "Product Manager",    department: "Product",     status: "online",  isLead: false },
   { id: 5, name: "ประยุทธ ตั้งใจ",  role: "QA Engineer",        department: "Engineering", status: "online",  isLead: false },
   { id: 6, name: "อรุณี แจ่มใส",    role: "Data Analyst",       department: "Data",        status: "away",    isLead: false },
+  { id: 7, name: "Thanawat Udcha",    role: "Hua Kuy",       department: "Coconut office",        status: "online",    isLead: true },
 ]
